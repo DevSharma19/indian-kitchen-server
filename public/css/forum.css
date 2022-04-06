@@ -1,0 +1,66 @@
+.toolbar {
+  display: flex;
+}
+
+.filter-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+.sort-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.toolbar-item {
+  padding: 0.5rem;
+}
+
+.btn-toolbar {
+  color: #333;
+}
+
+.forum-list-row {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid var(--color-extra);
+}
+
+.forum-list-main {
+  padding: 18px 12px;
+  flex-grow: 1;
+  margin-left: 18px;
+  display: table-cell;
+  justify-self: center;
+}
+
+.forum-list-main a {
+  color: #000;
+  text-decoration: none;
+}
+
+.forum-list-user {
+  padding: 18px 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.forum-list-user img {
+  margin-right: 12px;
+  border-radius: 50%;
+}
+
+.forum-sub-text {
+  font-size: 1em;
+  margin: 0;
+}
+
+.forum-list-add {
+  width: 100%;
+  padding: 18px 12px;
+  margin-left: 18px;
+  display: table-cell;
+  text-align: center;
+}

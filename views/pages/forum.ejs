@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/forum.css" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+	</head>
+
+	<body>
+		<nav><%- include('../partials/nav-bar') %></nav>
+		<header><%- include('../partials/title-bar') %></header>
+
+		<section class="box">
+			<div class="toolbar">
+				<% if(tag) { %>
+				<div class="filter-toolbar">
+					<div class="toolbar-item">
+						<a href="#" class="btn btn-toolbar">
+							<%= tag %>
+							<i class="fas fa-trash"></i>
+						</a>
+					</div>
+				</div>
+				<% } %>
+				<div class="sort-toolbar">
+					<div class="toolbar-item">
+						<a href="#" class="btn btn-dark btn-toolbar">
+							<i class="fas fa-clock"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<ul class="recipe-list">
+				<% recipes.forEach(recipe => { %>
+				<li class="forum-list-row">
+					<div class="forum-list-main">
+						<a href="/post">
+							<h3><%= recipe.title %></h3>
+						</a>
+						<div>
+							<p class="forum-sub-text">
+								By <%= recipe.username %>, <%= recipe.date %>
+							</p>
+						</div>
+					</div>
+					<div class="forum-list-user">
+						<img src="<%= recipe.userImage %>" alt="placeholder" />
+						<p class="forum-sub-text"><%= recipe.username %></p>
+					</div>
+				</li>
+				<% }) %>
+				<li class="forum-list-row">
+					<div class="forum-list-add">
+						<a href="/add" class="btn btn-dark">Add Recipe</a>
+					</div>
+				</li>
+			</ul>
+		</section>
+
+		<div class="divider"></div>
+
+		<div class="footer"><%- include('../partials/copyright.ejs') %></div>
+	</body>
+</html>
