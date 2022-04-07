@@ -15,10 +15,10 @@
 
 		<section class="box">
 			<div class="toolbar">
-				<% if(tag) { %>
+				<% if(tag !== '*') { %>
 				<div class="filter-toolbar">
 					<div class="toolbar-item">
-						<a href="#" class="btn btn-toolbar">
+						<a href="/forum" class="btn btn-toolbar">
 							<%= tag %>
 							<i class="fas fa-trash"></i>
 						</a>
@@ -37,12 +37,12 @@
 				<% recipes.forEach(recipe => { %>
 				<li class="forum-list-row">
 					<div class="forum-list-main">
-						<a href="/post">
+						<a href="/post/<%= recipe.id %> ">
 							<h3><%= recipe.title %></h3>
 						</a>
 						<div>
 							<p class="forum-sub-text">
-								By <%= recipe.username %>, <%= recipe.date %>
+								By <%= recipe.username %> | <%= recipe.date %>
 							</p>
 						</div>
 					</div>
