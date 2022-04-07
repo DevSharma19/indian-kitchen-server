@@ -1,158 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/add.css" />
+	</head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/add.css" />
-</head>
+	<body>
+		<nav><%- include('../partials/nav-bar') %></nav>
+		<header><%- include('../partials/title-bar') %></header>
 
-<body>
-	<nav><%- include('../partials/nav-bar') %></nav>
-	<header><%- include('../partials/title-bar') %></header>
+		<div class="form-wrapper">
+			<form action="/add" , method="POST">
+				<header>
+					<h2>Add your recipe</h2>
+				</header>
 
-    <div class="form-wrapper">
-        <form action="#">
+				<div>
+					<label class="desc" for="title">Title</label>
+					<div>
+						<input
+							name="title"
+							type="text"
+							class="field text fn"
+							value=""
+							size="8"
+							tabindex="1"
+						/>
+					</div>
+				</div>
 
-            <header>
-                <h2>Add your recipe</h2>
-            </header>
+				<div>
+					<label class="desc" for="description"> Description </label>
 
-            <div>
-                <label class="desc" id="title1" for="Field1">Title</label>
-                <div>
-                    <input id="Field1" name="Field1" type="text" class="field text fn" value="" size="8" tabindex="1">
-                </div>
-            </div>
+					<div>
+						<textarea
+							name="description"
+							spellcheck="true"
+							rows="10"
+							cols="50"
+							tabindex="4"
+						></textarea>
+					</div>
+				</div>
 
-            <div>
-                <label class="desc" id="title4" for="Field4">
-                    Description
-                </label>
+				<div>
+					<label class="desc" for="region"> Region </label>
+					<div>
+						<select name="tags[region]" class="field select medium" tabindex="11">
+							<option value="punjab">Punjab</option>
+							<option value="gujrat">Gujrat</option>
+							<option value="rajasthan">Rajasthan</option>
+							<option value="andhra">Andhra</option>
+							<option value="kerala">Kerala</option>
+							<option value="goa">Goa</option>
+							<option value="bengal">Bengal</option>
+							<option value="mughal">Mughal</option>
+							<option value="tamil nadu">Tamil Nadu</option>
+						</select>
+					</div>
+				</div>
 
-                <div>
-                    <textarea id="Field4" name="Field4" spellcheck="true" rows="10" cols="50" tabindex="4"></textarea>
-                </div>
-            </div>
+				<div>
+					<label class="desc" for="mealType"> Meal Type </label>
+					<div>
+						<select name="tags[mealType]" class="field select medium" tabindex="11">
+							<option value="breakfast">Breakfast</option>
+							<option value="lunch">Lunch</option>
+							<option value="dinner">Dinner</option>
+							<option value="appetizer">Appetizer</option>
+							<option value="snack">Snack</option>
+							<option value="dessert">Dessert</option>
+						</select>
+					</div>
+				</div>
 
-            <div>
-                <label class="desc" id="title106" for="Field106">
-                    Region
-                </label>
-                <div>
-                    <select id="Field106" name="Field106" class="field select medium" tabindex="11">
-                        <option value="Punjab">Punjab</option>
-                        <option value="Gujrat">Gujrat</option>
-                        <option value="Rajasthan">Rajasthan</option>
-                        <option value="Andhra">Andhra</option>
-                        <option value="Kerala">Kerala</option>
-                        <option value="Goa">Goa</option>
-                        <option value="Bengal">Bengal</option>
-                        <option value="Mughal">Mughal</option>
-                        <option value="Tamil Nadu">Tamil Nadu</option>
-                    </select>
-                </div>
-            </div>
+				<div>
+					<label class="desc" for="keyIngredient"> Key Ingredient </label>
+					<div>
+						<select
+							name="tags[keyIngredient]"
+							class="field select medium"
+							tabindex="11"
+						>
+							<option value="chicken">Chicken</option>
+							<option value="egg">Egg</option>
+							<option value="fish">Fish</option>
+							<option value="mutton">Mutton</option>
+							<option value="paneer">Paneer</option>
+							<option value="cheese">Cheese</option>
+						</select>
+					</div>
+				</div>
 
-            <div>
-                <label class="desc" id="title106" for="Field106">
-                    Meal Type
-                </label>
-                <div>
-                    <select id="Field106" name="Field106" class="field select medium" tabindex="11">
-                        <option value="First Choice">Breakfast</option>
-                        <option value="Second Choice">Lunch</option>
-                        <option value="Third Choice">Dinner</option>
-                        <option value="Third Choice">Appetizer</option>
-                        <option value="Third Choice">Snack</option>
-                        <option value="Third Choice">Dessert</option>
-                    </select>
-                </div>
-            </div>
+				<div>
+					<label class="desc" for="ingredients"> Ingredients </label>
 
-            <div>
-                <fieldset>
-                    <legend id="title6" class="desc">
-                        Key Ingredients
-                    </legend>
-                    <div>
-                        <div>
-                            <input id="Field6" name="Field6" type="checkbox" value="First Choice" tabindex="8">
-                            <label class="choice" for="Field6">Chicken</label>
-                        </div>
-                        <div>
-                            <input id="Field7" name="Field7" type="checkbox" value="Second Choice" tabindex="9">
-                            <label class="choice" for="Field7">Egg</label>
-                        </div>
-                        <div>
-                            <input id="Field8" name="Field8" type="checkbox" value="Third Choice" tabindex="10">
-                            <label class="choice" for="Field8">Fish</label>
-                            </span>
-                        </div>
-                        <div>
-                            <input id="Field6" name="Field6" type="checkbox" value="First Choice" tabindex="8">
-                            <label class="choice" for="Field6">Mutton</label>
-                        </div>
-                        <div>
-                            <input id="Field7" name="Field7" type="checkbox" value="Second Choice" tabindex="9">
-                            <label class="choice" for="Field7">Paneer</label>
-                        </div>
-                        <div>
-                            <input id="Field8" name="Field8" type="checkbox" value="Third Choice" tabindex="10">
-                            <label class="choice" for="Field8">Cheese</label>
-                            </span>
-                        </div>
-                </fieldset>
-            </div>
+					<div>
+						<textarea
+							name="ingredients"
+							spellcheck="true"
+							rows="10"
+							cols="50"
+							tabindex="4"
+						></textarea>
+					</div>
+				</div>
 
-            <div>
-                <label class="desc" id="title4" for="Field4">
-                    Ingredients
-                </label>
+				<div>
+					<label class="desc" for="tools"> Tools </label>
 
-                <div>
-                    <textarea id="Field4" name="Field4" spellcheck="true" rows="10" cols="50" tabindex="4"></textarea>
-                </div>
-            </div>
+					<div>
+						<textarea
+							name="tools"
+							spellcheck="true"
+							rows="10"
+							cols="50"
+							tabindex="4"
+						></textarea>
+					</div>
+				</div>
 
-            <div>
-                <label class="desc" id="title4" for="Field4">
-                    Tools
-                </label>
+				<div>
+					<label class="desc" for="instructions"> Instructions </label>
 
-                <div>
-                    <textarea id="Field4" name="Field4" spellcheck="true" rows="10" cols="50" tabindex="4"></textarea>
-                </div>
-            </div>
+					<div>
+						<textarea
+							name="instructions"
+							spellcheck="true"
+							rows="10"
+							cols="50"
+							tabindex="4"
+						></textarea>
+					</div>
+				</div>
 
-            <div>
-                <label class="desc" id="title4" for="Field4">
-                    Instructions
-                </label>
+				<div>
+					<div>
+						<input name="saveForm" type="submit" value="Submit" />
+					</div>
+				</div>
+			</form>
+		</div>
 
-                <div>
-                    <textarea id="Field4" name="Field4" spellcheck="true" rows="10" cols="50" tabindex="4"></textarea>
-                </div>
-            </div>
+		<div class="divider"></div>
 
-            <div>
-                <div>
-                    <input id="saveForm" name="saveForm" type="submit" value="Submit">
-                </div>
-            </div>
-
-        </form>
-    </div>
-
-    <div class="divider"></div>
-
-    <footer class="footer">
-        <div class="footer-container">
-            <p>© 2022 Indian Kitchen. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
-
+		<footer class="footer">
+			<div class="footer-container">
+				<p>© 2022 Indian Kitchen. All rights reserved.</p>
+			</div>
+		</footer>
+	</body>
 </html>

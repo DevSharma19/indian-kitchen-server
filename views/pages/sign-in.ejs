@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/sign-in.css" />
+		<script src="js/sign-in.js" defer></script>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
 	</head>
 
@@ -16,7 +17,7 @@
 		<div class="sign-in-form-wrapper">
 			<div class="container" id="container">
 				<div class="form-container sign-up-container">
-					<form action="#">
+					<form action="/sign-up" method="POST">
 						<h1 class="sign-in-form">Create Account</h1>
 						<div class="social-container">
 							<a href="#" class="social sign-in-form"
@@ -30,14 +31,17 @@
 							></a>
 						</div>
 						<span>or use your email for registration</span>
-						<input type="text" placeholder="Name" />
-						<input type="email" placeholder="Email" />
-						<input type="password" placeholder="Password" />
+						<input name="name" type="text" placeholder="Name" />
+						<input name="email" type="email" placeholder="Email" />
+						<input name="password" type="password" placeholder="Password" />
+						<% if (error) { %>
+						<span class="error"><%= error %> </span>
+						<% } %>
 						<button class="sign-in-form">Sign Up</button>
 					</form>
 				</div>
 				<div class="form-container sign-in-container">
-					<form action="#">
+					<form action="/sign-in" method="POST">
 						<h1 class="sign-in-form">Sign in</h1>
 						<div class="social-container">
 							<a href="#" class="social sign-in-form"
@@ -51,9 +55,12 @@
 							></a>
 						</div>
 						<span class="sign-in-form">or use your account</span>
-						<input type="email" placeholder="Email" />
-						<input type="password" placeholder="Password" />
+						<input name="email" type="email" placeholder="Email" />
+						<input name="password" type="password" placeholder="Password" />
 						<a class="sign-in-form" href="#">Forgot your password?</a>
+						<% if (error) { %>
+						<span class="error"><%= error %> </span>
+						<% } %>
 						<button class="sign-in-form">Sign In</button>
 					</form>
 				</div>
@@ -64,14 +71,14 @@
 							<p class="sign-in-form">
 								To keep connected with us please login with your personal info
 							</p>
-							<button class="ghost sign-in-form" id="signIn">Sign In</button>
+							<button class="ghost sign-in-form" id="sign-in">Sign In</button>
 						</div>
 						<div class="overlay-panel overlay-right">
 							<h1 class="sign-in-form">Hello, Friend!</h1>
 							<p class="sign-in-form">
 								Enter your personal details and start journey with us
 							</p>
-							<button class="ghost sign-in-form" id="signUp">Sign Up</button>
+							<button class="ghost sign-in-form" id="sign-up">Sign Up</button>
 						</div>
 					</div>
 				</div>

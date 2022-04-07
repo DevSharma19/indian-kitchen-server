@@ -21,7 +21,11 @@
 	</ul>
 
 	<ul class="navbar-nav-right">
+		<% if (!locals.username) { %>
 		<li><a href="/sign-in" class="btn" id="signInNav">Sign In</a></li>
 		<li><a href="/sign-up" class="btn btn-dark" id="signUpNav">Sign Up</a></li>
+		<% } else { %>
+		<li class="btn"><%= locals.username %></li>
+		<% } %>
 	</ul>
 </div>
