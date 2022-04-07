@@ -4,8 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node src/bot.cjs",
-    "dev": "nodemon src/bot.cjs"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
