@@ -4,7 +4,8 @@
 	"description": "The Indian Kitchen server is a web forum that allows users to share their recipes with other users. The application is built on Node.js and Express.js.",
 	"main": "server.js",
 	"scripts": {
-		"start": "node server.js"
+		"start": "node server.js",
+		"dev": "nodemon server.js"
 	},
 	"keywords": [],
 	"author": {

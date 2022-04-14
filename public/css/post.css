@@ -1,0 +1,32 @@
+.comments-container {
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+}
+.button-group {
+  margin-bottom: 20px;
+}
+.comments {
+  clear: both;
+  list-style: none;
+  padding-left: 0;
+  width: 100%;
+  text-align: left;
+}
+.comments li {
+    display: flex;
+    align-items: center;
+  background-color: #fff;
+  border: 1.5px solid #d8d8d8;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+  min-height: 42px;
+  box-shadow:8px 8px 5px #888888;
+}
+
+.comments li p {
+    flex-grow: 1;
+    padding: 0px 10px;
+}
