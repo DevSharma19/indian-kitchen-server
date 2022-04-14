@@ -1,20 +1,23 @@
 {
-  "name": "indian-kitchen-server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "UNLICENSED",
-  "dependencies": {
-    "body-parser": "^1.20.0",
-    "date-and-time": "^2.3.0",
-    "ejs": "^3.1.6",
-    "express": "^4.17.3",
-    "firebase": "^9.6.10"
-  },
-  "type": "module"
+	"name": "indian-kitchen-server",
+	"version": "1.0.0",
+	"description": "The Indian Kitchen server is a web forum that allows users to share their recipes with other users. The application is built on Node.js and Express.js.",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"keywords": [],
+	"author": {
+		"name": "Dev Sharma",
+		"email": "devnavla@gmail.com"
+	},
+	"license": "UNLICENSED",
+	"dependencies": {
+		"body-parser": "^1.20.0",
+		"date-and-time": "^2.3.0",
+		"ejs": "^3.1.6",
+		"express": "^4.17.3",
+		"firebase": "^9.6.10"
+	},
+	"type": "module"
 }
