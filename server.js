@@ -32,6 +32,7 @@ const auth = getAuth(firebase);
 
 onAuthStateChanged(auth, (user) => {
 	if (user) {
+		console.log('User logged in:' + user.uid);
 		app.locals.username = user.displayName;
 		app.locals.userImage = user.photoURL;
 		app.locals.id = user.uid;
