@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" type="text/css" href="/css/style.css" />
-		<link rel="stylesheet" type="text/css" href="/css/comments.css" />
+		<link rel="stylesheet" type="text/css" href="/css/post.css" />
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
 	</head>
 
@@ -17,25 +17,32 @@
 			<div class="recipe-page">
 				<section class="grid-col-2">
 					<img src="/img/NU66NMBU7VAG6IQRAVPNZ6THAI(1).png" alt="placeholder" />
-					<div class="box-text">
-						<h2 class="text-md"><%= recipe.title%></h2>
-						<p class="text-sm"><%= recipe.description %></p>
-						<a href="/post" class="btn btn-dark-outline"><%= recipe.tags.region %> </a>
-						<a href="/post" class="btn btn-dark-outline"
-							><%= recipe.tags.keyIngredient %></a
-						>
-						<a href="/post" class="btn btn-dark-outline"><%= recipe.tags.mealType %></a>
-						<br />
-						<a href="/post" class="btn btn-dark-outline"
-							><i class="fas fa-thumbs-up"></i
-						></a>
-						<a href="/post" class="btn btn-dark-outline"
-							><i class="fas fa-thumbs-down"></i
-						></a>
-						<a href="/post" class="btn btn-dark-outline"
-							><i class="fas fa-share-alt"></i
-						></a>
-					</div>
+					<article class="recipe-info">
+						<h2><%= recipe.title%></h2>
+						<p><%= recipe.description %></p>
+						<p class="recipe-tags">
+							<a href="/forum?tag=<%= recipe.tags.region %>"
+								><%= recipe.tags.region %></a
+							>
+							<a href="/forum?tag=<%= recipe.tags.keyIngredient %>"
+								><%= recipe.tags.keyIngredient %></a
+							>
+							<a href="/forum?tag=<%= recipe.tags.mealType %>"
+								><%= recipe.tags.mealType %></a
+							>
+						</p>
+						<p class="recipe-tags">
+							<a href="/" class="btn btn-dark-outline"
+								><i class="fas fa-thumbs-up"></i
+							></a>
+							<a href="/" class="btn btn-dark-outline"
+								><i class="fas fa-thumbs-down"></i
+							></a>
+							<a href="/" class="btn btn-dark-outline"
+								><i class="fas fa-share-alt"></i
+							></a>
+						</p>
+					</article>
 				</section>
 				<!-- content -->
 				<section class="recipe-content">
@@ -45,6 +52,7 @@
 						<div class="single-instruction">
 							<header>
 								<p>step <%= step + 1 %></p>
+								<div></div>
 							</header>
 							<p><%= instruction %></p>
 						</div>
@@ -77,105 +85,25 @@
 		<div class="divider"></div>
 
 		<div class="comments-container">
-			<ul id="comments-list" class="comments-list">
+			<ul class="comments">
+				<% comments.forEach(comment => { %>
 				<li>
-					<div class="comment-main-level">
-						<!-- Avatar -->
-						<div class="comment-avatar">
-							<img src="https://i.pravatar.cc/60?img=1" alt="" />
-						</div>
-						<!-- Contenedor del Comentario -->
-						<div class="comment-box">
-							<div class="comment-head">
-								<h6 class="comment-name by-author">
-									<a href="http://creaticode.com/blog">Username 1</a>
-								</h6>
-								<span>hace 20 minutos</span>
-								<i class="fa fa-reply"></i>
-								<i class="fa fa-heart"></i>
-							</div>
-							<div class="comment-content">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
-								omnis animi et iure laudantium vitae, praesentium optio, sapiente
-								distinctio illo?
-							</div>
-						</div>
-					</div>
-					<!-- Respuestas de los comentarios -->
-					<ul class="comments-list reply-list">
-						<li>
-							<!-- Avatar -->
-							<div class="comment-avatar">
-								<img src="https://i.pravatar.cc/60?img=2" alt="" />
-							</div>
-							<!-- Contenedor del Comentario -->
-							<div class="comment-box">
-								<div class="comment-head">
-									<h6 class="comment-name">
-										<a href="http://creaticode.com/blog">Username 2</a>
-									</h6>
-									<span>hace 10 minutos</span>
-									<i class="fa fa-reply"></i>
-									<i class="fa fa-heart"></i>
-								</div>
-								<div class="comment-content">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
-									omnis animi et iure laudantium vitae, praesentium optio,
-									sapiente distinctio illo?
-								</div>
-							</div>
-						</li>
-
-						<li>
-							<!-- Avatar -->
-							<div class="comment-avatar">
-								<img src="https://i.pravatar.cc/60?img=3" alt="" />
-							</div>
-							<!-- Contenedor del Comentario -->
-							<div class="comment-box">
-								<div class="comment-head">
-									<h6 class="comment-name">
-										<a href="http://creaticode.com/blog">Username 3</a>
-									</h6>
-									<span>hace 10 minutos</span>
-									<i class="fa fa-reply"></i>
-									<i class="fa fa-heart"></i>
-								</div>
-								<div class="comment-content">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
-									omnis animi et iure laudantium vitae, praesentium optio,
-									sapiente distinctio illo?
-								</div>
-							</div>
-						</li>
-					</ul>
+					<p><%= comment.content %></p>
+					<img src="https://i.pravatar.cc/50?img=13" alt="" />
 				</li>
-
-				<li>
-					<div class="comment-main-level">
-						<!-- Avatar -->
-						<div class="comment-avatar">
-							<img src="https://i.pravatar.cc/60?img=4" alt="" />
-						</div>
-						<!-- Contenedor del Comentario -->
-						<div class="comment-box">
-							<div class="comment-head">
-								<h6 class="comment-name">
-									<a href="http://creaticode.com/blog">Username 4</a>
-								</h6>
-								<span>hace 10 minutos</span>
-								<i class="fa fa-reply"></i>
-								<i class="fa fa-heart"></i>
-							</div>
-							<div class="comment-content">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
-								omnis animi et iure laudantium vitae, praesentium optio, sapiente
-								distinctio illo?
-							</div>
-						</div>
-					</div>
-				</li>
+				<% }) %>
 			</ul>
+			<form action="/add-comment" method="post">
+				<div class="form-group">
+					<textarea
+						class="form-control status-box"
+						rows="3"
+						placeholder="Enter your comment here"
+						style="width: 100%; margin-bottom: 20px"
+					></textarea>
+				</div>
+				<input type="submit" value="submit" class="btn" style="float: right" />
+			</form>
 		</div>
 
 		<div class="divider"></div>

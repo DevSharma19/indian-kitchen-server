@@ -69,6 +69,16 @@ app.get('/post/:id', async (req, res) => {
 	const id = req.params.id;
 	res.render('pages/post.ejs', {
 		recipe: await getRecipe(id),
+		comments: [
+			{
+				content:
+					'Great recipe! I tried it myself and found it to be a bit too garlicy. However, my family loved it as it is.',
+			},
+			{
+				content:
+					'I overcooked my dals the first time I tried it. A difficult but enjoyable recipe to follow.',
+			},
+		],
 	});
 });
 
